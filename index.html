@@ -6,53 +6,30 @@
 <title>Catalogue VF — Marion Mouly</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
 <style>
-:root {
-  --cream:      #f0ebe0;
-  --cream-dk:   #e2dbd0;
-  --cream-card: #f5f1e8;
-  --sage:       #c2d4ba;
-  --sage-mid:   #9ab89a;
-  --sage-dark:  #3a4e36;
-  --gold:       #b8956a;
-  --gold-lt:    #d4b48a;
-  --txt-mid:    #4a4a3a;
-  --F: 'Cormorant Garamond', 'Palatino Linotype', Georgia, serif;
-}
+:root{--cream:#f0ebe0;--cream-dk:#e2dbd0;--cream-card:#f5f1e8;--sage:#c2d4ba;--sage-mid:#9ab89a;--sage-dark:#3a4e36;--gold:#b8956a;--gold-lt:#d4b48a;--txt-mid:#4a4a3a;--F:'Cormorant Garamond','Palatino Linotype',Georgia,serif}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--F);background:var(--cream);color:#2a2a20;min-height:100vh;padding:0 12px;overflow-x:hidden}
-
-/* Barres latérales */
 .bar{position:fixed;top:0;bottom:0;width:7px;z-index:200;pointer-events:none}
 .bar-l{left:0}.bar-r{right:0}
 .bar::before,.bar::after{content:'';position:absolute;top:0;bottom:0}
-.bar-l::before{left:0;width:5px;background:var(--sage-dark)}
-.bar-l::after{left:5px;width:2px;background:var(--gold)}
-.bar-r::before{right:0;width:5px;background:var(--sage-dark)}
-.bar-r::after{right:5px;width:2px;background:var(--gold)}
-
-/* Header */
-header{background:var(--sage-dark);margin:0 -12px;padding:0 12px;border-bottom:1px solid var(--gold);box-shadow:0 3px 0 0 var(--gold-lt)}
+.bar-l::before{left:0;width:5px;background:var(--sage-dark)}.bar-l::after{left:5px;width:2px;background:var(--gold)}
+.bar-r::before{right:0;width:5px;background:var(--sage-dark)}.bar-r::after{right:5px;width:2px;background:var(--gold)}
+header{background:var(--sage-dark);margin:0 -12px;padding:0 12px;border-bottom:1px solid var(--gold);box-shadow:0 3px 0 var(--gold-lt)}
 .h-inner{max-width:1380px;margin:0 auto;padding:44px 60px 40px;text-align:center}
+.h-orn{font-size:.85rem;color:var(--gold);letter-spacing:.5em;margin-bottom:14px}
+h1{font-family:var(--F);font-size:clamp(2.6rem,7vw,6rem);font-weight:600;letter-spacing:.22em;color:var(--cream);text-transform:uppercase;line-height:1;margin-bottom:14px}
+.subtitle{font-size:.88rem;color:var(--gold-lt);letter-spacing:.3em;font-style:italic}
 .h-name{font-family:var(--F);font-size:clamp(1.4rem,3vw,2rem);font-weight:600;letter-spacing:.35em;color:var(--cream);text-transform:uppercase;margin-bottom:8px}
 .h-role{font-size:.88rem;color:var(--sage-mid);letter-spacing:.14em;margin-bottom:4px}
 .h-lang{font-size:.8rem;color:var(--gold-lt);font-style:italic;letter-spacing:.2em;margin-bottom:20px}
 .h-rule{width:120px;height:1px;background:var(--gold);margin:20px auto 16px}
-.h-orn{font-size:.85rem;color:var(--gold);letter-spacing:.5em;margin-bottom:14px}
-h1{font-family:var(--F);font-size:clamp(2.6rem,7vw,6rem);font-weight:600;letter-spacing:.22em;color:var(--cream);text-transform:uppercase;line-height:1;margin-bottom:14px}
-.subtitle{font-size:.88rem;color:var(--gold-lt);letter-spacing:.3em;font-style:italic}
-
-/* Main */
 main{max-width:1380px;margin:0 auto;padding:60px 46px 40px}
 section{margin-bottom:70px}
 .sec-hd{display:flex;align-items:center;gap:18px;margin-bottom:32px}
 .sec-tag{font-family:var(--F);font-size:.76rem;font-weight:600;letter-spacing:.45em;color:var(--cream-card);background:var(--sage-dark);padding:7px 22px;white-space:nowrap;flex-shrink:0}
 .sec-line{flex:1;height:1px;background:var(--cream-dk)}
-
-/* Grille */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:22px}
-
-/* Cartes */
 .card{cursor:pointer;position:relative;background:var(--cream-card);border:1px solid var(--cream-dk);overflow:hidden;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;box-shadow:2px 3px 10px rgba(42,42,32,.1);opacity:0;transform:translateY(14px);animation:cardIn .38s ease forwards;display:flex;flex-direction:column}
 @keyframes cardIn{to{opacity:1;transform:translateY(0)}}
 .card::before{content:'';position:absolute;top:5px;left:5px;width:16px;height:16px;border-top:1.5px solid var(--gold);border-left:1.5px solid var(--gold);opacity:0;transition:opacity .22s;z-index:3;pointer-events:none}
@@ -66,8 +43,6 @@ section{margin-bottom:70px}
 .card-caption{padding:10px 12px 12px;background:var(--sage-dark);flex:1}
 .card-title{font-family:var(--F);font-size:1rem;font-weight:600;color:var(--cream);letter-spacing:.06em;line-height:1.35;text-transform:uppercase;margin-bottom:3px}
 .card-year{display:block;font-size:.85rem;color:var(--gold-lt);letter-spacing:.2em;font-style:italic}
-
-/* Modale */
 .modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px}
 .modal.hidden{display:none}
 .modal-backdrop{position:absolute;inset:0;background:rgba(44,60,40,.72);backdrop-filter:blur(5px);cursor:pointer}
@@ -91,36 +66,15 @@ section{margin-bottom:70px}
 .eps-label{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-family:var(--F)}
 .modal-eps{display:flex;flex-wrap:wrap;gap:6px}
 .ep-tag{background:var(--sage);color:var(--sage-dark);font-size:.78rem;letter-spacing:.08em;padding:4px 10px;border:1px solid var(--sage-mid)}
-
-/* Footer */
 footer{background:var(--sage-dark);margin:0 -12px;padding:0 12px;border-top:1px solid var(--gold)}
 .f-inner{max-width:1380px;margin:0 auto;padding:24px 60px;text-align:center}
-.f-name{font-family:var(--F);font-size:1.3rem;letter-spacing:.3em;color:var(--cream);margin-bottom:8px}
-.f-role{font-size:.8rem;color:var(--sage-mid);letter-spacing:.14em;margin-bottom:4px}
-.f-lang{font-size:.75rem;color:var(--gold-lt);font-style:italic;letter-spacing:.18em;margin-bottom:20px}
 .f-links{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 14px}
 .f-links a{color:var(--cream-dk);text-decoration:none;font-size:.75rem;letter-spacing:.1em;transition:color .2s}
 .f-links a:hover{color:var(--gold-lt)}
 .f-links .sep{color:var(--gold);font-size:.5rem}
-
-/* Responsive */
 @media(max-width:900px){.h-inner,.f-inner{padding-left:30px;padding-right:30px}main{padding-left:26px;padding-right:26px}}
 @media(max-width:600px){body{padding:0 8px}.bar{width:4px}.h-inner,.f-inner{padding:32px 20px 28px}main{padding:36px 12px 30px}h1{font-size:2.1rem;letter-spacing:.12em}.grid{grid-template-columns:repeat(2,1fr);gap:12px}.modal-box{width:96vw}}
-
-.home-nav{display:flex;gap:40px;justify-content:center;align-items:stretch;padding:80px 40px}
-.home-card{width:280px;border:1px solid var(--gold);background:var(--cream-card);cursor:pointer;text-align:center;padding:50px 28px 44px;transition:all .25s ease;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:18px;position:relative;overflow:hidden}
-.home-card::before{content:'';position:absolute;top:5px;left:5px;width:20px;height:20px;border-top:1.5px solid var(--gold);border-left:1.5px solid var(--gold);opacity:0;transition:opacity .25s}
-.home-card::after{content:'';position:absolute;bottom:5px;right:5px;width:20px;height:20px;border-bottom:1.5px solid var(--gold);border-right:1.5px solid var(--gold);opacity:0;transition:opacity .25s}
-.home-card:hover{background:var(--sage-dark);border-color:var(--sage-dark);transform:translateY(-6px);box-shadow:0 16px 40px rgba(42,42,32,.2)}
-.home-card:hover::before,.home-card:hover::after{opacity:1}
-.home-card-orn{font-size:1.4rem;color:var(--gold);transition:color .25s}
-.home-card:hover .home-card-orn{color:var(--gold-lt)}
-.home-card-label{font-family:var(--F);font-size:1.2rem;font-weight:600;letter-spacing:.45em;color:var(--sage-dark);text-transform:uppercase;transition:color .25s}
-.home-card:hover .home-card-label{color:var(--cream)}
-.home-card-sub{font-size:.82rem;color:var(--txt-mid);letter-spacing:.12em;font-style:italic;transition:color .25s}
-.home-card:hover .home-card-sub{color:var(--sage-mid)}
-@media(max-width:600px){.home-nav{flex-direction:column;align-items:center;padding:50px 20px}.home-card{width:100%;max-width:300px}}
-.home-nav{display:flex;gap:40px;justify-content:center;align-items:stretch;padding:80px 40px}.home-card{width:280px;border:1px solid var(--gold);background:var(--cream-card);cursor:pointer;text-align:center;padding:50px 28px 44px;transition:all .25s ease;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:18px;position:relative;overflow:hidden}.home-card::before{content:"";position:absolute;top:5px;left:5px;width:20px;height:20px;border-top:1.5px solid var(--gold);border-left:1.5px solid var(--gold);opacity:0;transition:opacity .25s}.home-card::after{content:"";position:absolute;bottom:5px;right:5px;width:20px;height:20px;border-bottom:1.5px solid var(--gold);border-right:1.5px solid var(--gold);opacity:0;transition:opacity .25s}.home-card:hover{background:var(--sage-dark);border-color:var(--sage-dark);transform:translateY(-6px);box-shadow:0 16px 40px rgba(42,42,32,.2)}.home-card:hover::before,.home-card:hover::after{opacity:1}.home-card-orn{font-size:1.4rem;color:var(--gold);transition:color .25s}.home-card:hover .home-card-orn{color:var(--gold-lt)}.home-card-label{font-family:var(--F);font-size:1.2rem;font-weight:600;letter-spacing:.45em;color:var(--sage-dark);text-transform:uppercase;transition:color .25s}.home-card:hover .home-card-label{color:var(--cream)}.home-card-sub{font-size:.82rem;color:var(--txt-mid);letter-spacing:.12em;font-style:italic;transition:color .25s}.home-card:hover .home-card-sub{color:var(--sage-mid)}@media(max-width:600px){.home-nav{flex-direction:column;align-items:center;padding:50px 20px}.home-card{width:100%;max-width:300px}}</style>
+.home-nav{display:flex;gap:40px;justify-content:center;align-items:stretch;padding:80px 40px}.home-card{width:280px;border:1px solid var(--gold);background:var(--cream-card);cursor:pointer;text-align:center;padding:50px 28px 44px;transition:all .25s ease;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:18px;position:relative;overflow:hidden}.home-card::before{content:'';position:absolute;top:5px;left:5px;width:20px;height:20px;border-top:1.5px solid var(--gold);border-left:1.5px solid var(--gold);opacity:0;transition:opacity .25s}.home-card::after{content:'';position:absolute;bottom:5px;right:5px;width:20px;height:20px;border-bottom:1.5px solid var(--gold);border-right:1.5px solid var(--gold);opacity:0;transition:opacity .25s}.home-card:hover{background:var(--sage-dark);border-color:var(--sage-dark);transform:translateY(-6px);box-shadow:0 16px 40px rgba(42,42,32,.2)}.home-card:hover::before,.home-card:hover::after{opacity:1}.home-card-orn{font-size:1.4rem;color:var(--gold);transition:color .25s}.home-card:hover .home-card-orn{color:var(--gold-lt)}.home-card-label{font-family:var(--F);font-size:1.2rem;font-weight:600;letter-spacing:.45em;color:var(--sage-dark);text-transform:uppercase;transition:color .25s}.home-card:hover .home-card-label{color:var(--cream)}.home-card-sub{font-size:.82rem;color:var(--txt-mid);letter-spacing:.12em;font-style:italic;transition:color .25s}.home-card:hover .home-card-sub{color:var(--sage-mid)}@media(max-width:600px){.home-nav{flex-direction:column;align-items:center;padding:50px 20px}.home-card{width:100%;max-width:300px}}</style>
 </head>
 <body>
 <div class="bar bar-l"></div><div class="bar bar-r"></div>
@@ -148,18 +102,14 @@ footer{background:var(--sage-dark);margin:0 -12px;padding:0 12px;border-top:1px 
     </a>
   </div>
 </main>
-<footer>
-  <div class="f-inner">
-    <nav class="f-links">
-      <a href="mailto:marionmouly8@gmail.com">marionmouly8@gmail.com</a>
-      <span class="sep">&#9670;</span>
-      <a href="https://www.linkedin.com/in/marion-mouly-52405015a/" target="_blank" rel="noopener">LinkedIn</a>
-      <span class="sep">&#9670;</span>
-      <a href="https://www.youtube.com/watch?v=jE5qdrAX2U4" target="_blank" rel="noopener">YouTube</a>
-      <span class="sep">&#9670;</span>
-      <a href="https://www.ataa.fr/annuaire/Marion" target="_blank" rel="noopener">ATAA</a>
-    </nav>
-  </div>
-</footer>
+<footer><div class="f-inner"><nav class="f-links">
+  <a href="mailto:marionmouly8@gmail.com">marionmouly8@gmail.com</a>
+  <span class="sep">&#9670;</span>
+  <a href="https://www.linkedin.com/in/marion-mouly-52405015a/" target="_blank" rel="noopener">LinkedIn</a>
+  <span class="sep">&#9670;</span>
+  <a href="https://www.youtube.com/watch?v=jE5qdrAX2U4" target="_blank" rel="noopener">YouTube</a>
+  <span class="sep">&#9670;</span>
+  <a href="https://www.ataa.fr/annuaire/Marion" target="_blank" rel="noopener">ATAA</a>
+</nav></div></footer>
 </body>
 </html>
